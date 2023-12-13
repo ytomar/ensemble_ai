@@ -3,7 +3,7 @@ import enum, json
 import openai
 import pandas as pd
 
-API_KEY='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'
+API_KEY='YOUR_OPENAI_KEY'
 
 class QueryType(enum.Enum):
     LOAD = enum.auto()
