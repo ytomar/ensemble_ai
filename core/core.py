@@ -4,7 +4,7 @@ from nlp.query_processor import QueryProcessor, QueryType  # Assuming you have a
 from connectors import yfinance_connector
 
 
-class GaussAI:
+class DaVinci:
     def __init__(self):
         self.query_processor = QueryProcessor()
         self.dataframe = None
@@ -58,9 +58,9 @@ class GaussAI:
 
 # Example usage
 if __name__ == "__main__":
-    gai = GaussAI()
-    df = gai.load("nifty data from 3rd Mar 2023")
-    df2 = gai.chat("Generate daily open to close returns calculated as close/open - 1")
+    dai = DaVinci()
+    df = dai.load("nifty data from 3rd Mar 2023")
+    df2 = dai.chat("Generate daily open to close returns calculated as close/open - 1")
     print(df.head().to_string())
     # df.gauss.chat("filter data to show closing prices for the last 5 days")
     # Example NLP query for data
