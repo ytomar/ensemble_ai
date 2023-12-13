@@ -3,13 +3,14 @@ import yaml
 from pathlib import Path
 
 
-def gauss_ai_home() -> Path:
+def ensemble_ai_home() -> Path:
     this_file = Path(__file__).parent
     home_dir = this_file / ".."
     return home_dir.absolute()
 
+
 def get_config(name: str) -> dict:
-    config_name = gauss_ai_home() / "config" / f"{name}.yml"
+    config_name = ensemble_ai_home() / "config" / f"{name}.yml"
     return yaml.load(open(config_name), Loader=yaml.SafeLoader)
 
 
@@ -23,7 +24,6 @@ def get_url(url: str, headers: dict=None):
 
 # def post_url(url: str, params: dict, headers: dict, data=None):
 #     response = requests.post(url, params=params, headers=headers, data=data)
-
 
 
 TEXT = """curl 'https://query1.finance.yahoo.com/v1/finance/search?q=NIFTY&lang=en-US&region=US&quotesCount=8&newsCount=0&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&enableCb=true&enableNavLinks=true&enableEnhancedTrivialQuery=true&enableCulturalAssets=true&enableLogoUrl=true&researchReportsCount=2' \
