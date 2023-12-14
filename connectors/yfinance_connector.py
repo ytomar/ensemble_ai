@@ -5,7 +5,7 @@ import pandas as pd
 
 from pandas.tseries.offsets import BDay
 
-from gauss_ai.utils import get_config, get_url
+from code.utils import get_config, get_url
 
 CONFIG = get_config("yfinance")
 

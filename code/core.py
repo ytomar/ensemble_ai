@@ -1,4 +1,3 @@
-import pandas as pd
 import json
 from nlp.query_processor import QueryProcessor, QueryType  # Assuming you have a module for processing queries
 from connectors import yfinance_connector
@@ -17,9 +16,9 @@ class DaVinci:
         """
         params = json.loads(self.query_processor.parse_query(query, QueryType.LOAD))
 
-        source = params['source'];
+        source = params['source']
         symbol = params['symbol']
-        start_date = params['start_date'];
+        start_date = params['start_date']
         end_date = params['end_date']
         print(f"Parsed JSON:\n{params}\n")
         if source == "yfinance":
@@ -59,9 +58,11 @@ class DaVinci:
 # Example usage
 if __name__ == "__main__":
     dai = DaVinci()
-    df = dai.load("nifty data from 3rd Mar 2023")
-    df2 = dai.chat("Generate daily open to close returns calculated as close/open - 1")
+    # Example 1
+    # df = dai.load("nifty data from 3rd Mar 2023 to 30th April 2023")
+    # df = dai.chat("Generate daily open to close returns calculated as close/open - 1")
+    # print(df.head().to_string())
+    # Example 2
+    df = dai.load("samsung electronics from 3rd Mar 2023 to 30th April 2023")
     print(df.head().to_string())
-    # df.gauss.chat("filter data to show closing prices for the last 5 days")
-    # Example NLP query for data
-    # transformation
+
